@@ -14,10 +14,7 @@ public  class Employee{
         Address = address;
     }
 
-    
-
-
-    public static int getId() {
+     public static int getId() {
         return id;
     }
 

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class Connections {
 
-    //  Connection conn=null;
+   
 
      static Connection conn = null;
 
@@ -15,7 +15,7 @@ public class Connections {
                  System.out.println("Connection successfully established");
              } catch (SQLException e) {
                  System.err.println("Connection failed: " + e.getMessage());
-                 throw e; // Rethrow the exception to handle it upstream
+                
              }
          }
          return conn;

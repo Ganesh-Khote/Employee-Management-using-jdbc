@@ -3,6 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class EmployeeDao{
 
     public static void createEmployee(Employee employee){
@@ -29,6 +30,7 @@ public class EmployeeDao{
     }
 
     public static void viewEmployee() throws SQLException{
+      
         String query=Query.view;
         try(Connection conn=Connections.connect();
         PreparedStatement psmt=conn.prepareStatement(query) ;
@@ -71,24 +73,20 @@ public class EmployeeDao{
         }
     }
 
-    public static void updateEmployee(Employee employee){
+    public static void updateEmployee(int id,String Name,Double Salary,String Department,String Address){
         String query=Query.update;
         try(Connection conn=Connections.connect();
         PreparedStatement psmt=conn.prepareStatement(query)){
 
-            // System.out.println(conn);
-            // System.out.println("Employee ID: " + employee.getId());
-            // System.out.println("Employee Name: " + employee.getName());
-            // System.out.println("Employee Salary: " + employee.getSalary());
-            // System.out.println("Employee Department: " + employee.getDepartment());
-            // System.out.println("Employee Address: " + employee.getAddress());
+           
+          
 
       
-            psmt.setInt(1, Employee.getId());
-            psmt.setString(2, Employee.getName());
-            psmt.setDouble(3, Employee.getSalary());
-            psmt.setString(4, Employee.getDepartment());
-            psmt.setString(5, Employee.getAddress());
+            psmt.setInt(5, id);
+            psmt.setString(1,Name);
+            psmt.setDouble(2, Salary);
+            psmt.setString(3, Department);
+            psmt.setString(4, Address);
 
             int Affectedrow=psmt.executeUpdate();
 

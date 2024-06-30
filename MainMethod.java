@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+
 import java.util.Scanner;
 
 public class MainMethod{
@@ -27,16 +28,16 @@ int choice;
             int id=sc.nextInt();
             System.out.println("Enter the employee Name");
             String name=sc.next();
-            // sc.next();
+           
             System.out.println("Enter the employee Salary");
             Double salary=sc.nextDouble();
-            // sc.next();
+            
             System.out.println("Enter the employee Department");
             String dept=sc.next();
-            // sc.next();
+            
             System.out.println("Enter the employee Address");
             String Address=sc.next();
-            // sc.next();
+       
 
             Employee emp=new Employee(id, name, salary, dept, Address);
             EmployeeDao.createEmployee(emp);
@@ -46,28 +47,29 @@ int choice;
           case 2:
           System.out.println("VIew Employee");
           EmployeeDao.viewEmployee();
+         
           break; 
           
           case 3:
             System.out.println("Update Employee");
-            // System.out.println("Add New Employee");
+            
             System.out.println("Enter the employee Id");
             int idu=sc.nextInt();
             System.out.println("Enter the employee Name");
             String nameu=sc.next();
-            // sc.next();
+            
             System.out.println("Enter the employee Salary");
             Double salaryu=sc.nextDouble();
-            // sc.next();
+            
             System.out.println("Enter the employee Department");
             String deptu=sc.next();
-            // sc.next();
+            
             System.out.println("Enter the employee Address");
             String Addressu=sc.next();
-            // sc.next();
+        
 
-            Employee empu=new Employee(idu, nameu, salaryu, deptu, Addressu);
-            EmployeeDao.updateEmployee(empu);
+            
+            EmployeeDao.updateEmployee(idu, nameu, salaryu, deptu, Addressu);
             
           break;
 
